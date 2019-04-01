@@ -82,6 +82,7 @@ $(function() {
     .then(
       function() {
         console.log("Created new customer");
+        $("#customer").val("");
         $("#customer").attr("placeholder", "Customer changed");
       }
     );
