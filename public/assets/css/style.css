@@ -1,0 +1,129 @@
+/* Content */
+
+div.col-3,div.col-md-2{
+  padding-left:0px;
+}
+
+.content{
+  color:#DCE0D9;
+  margin:0 auto;
+  width:98%;
+  font-family: 'Titillium Web', sans-serif;
+}
+
+.devoured,.notdevoured{
+  border:5px solid #DCE0D9;
+  border-radius: 25px;
+  margin:10px 0 10px 0;
+  background-color: #0C0910;
+}
+
+body{
+  background-color: #FFC15E;
+   background: url("/assets/images/pattern.png") repeat center fixed;
+    width:100%;
+}
+
+.title{
+  font-size:60px;
+  font-weight: 800;
+  color:#D52941;
+  -webkit-text-fill-color: #DCE0D9;
+  -webkit-text-stroke-width:0.25px;
+  -webkit-text-stroke-color:#D52941;
+}
+
+.mid-title{
+  font-size:45px;
+  color:#D52941;
+  margin-bottom:0px;
+}
+
+/* List Items */
+
+li {
+  margin: 8px;
+  padding:5px;
+  font-size:20px;
+}
+
+li.button{
+  margin: 8px;
+  padding:5px;
+  font-size:15px;
+  margin-left:0px;
+  padding-left:0px;
+}
+
+li:before { 
+  content: "🍔"; 
+}
+li.button:before{
+   content: ""; 
+}
+
+button{
+ background-color: #0C0910;
+ border:3px solid #DCE0D9;
+ border-radius: 5px;
+ color:#DCE0D9;
+ transition: all .2s ease-in-out;
+}
+button:hover,button:active{
+  cursor: pointer;
+  content:"🍔";
+  border:3px solid #FCD581;
+  color:#FCD581;
+  transform: scale(1.1);
+}
+/* Form */
+
+.create-update-form {
+  padding: 5px;
+  margin: 5px;
+}
+
+.form-group {
+  margin-bottom: 5px;
+}
+
+label{
+  font-size:20px;
+  font-weight: bold;
+  color:#DCE0D9;
+}
+
+input#burg{
+  border-radius:5px;
+}
+button.submit{
+  margin-bottom:10px;
+}
+button.submit:hover,button.submit:active{
+  cursor: pointer;
+  content:"🍔";
+  border:3px solid #D52941;
+  color:#D52941;
+  transform: scale(1.2);
+}
+
+.form{
+  border:5px solid #D52941;
+  border-radius: 25px;
+  margin:10px 0 10px 0;
+  background-color: rgba(1, 1, 2, 0.95);
+}
+
+
+@media only screen and (max-width: 650px) {
+.title{
+  font-size:40px;
+  -webkit-text-stroke-width:1px;
+}
+.mid-title{
+  font-size:30px;
+}
+body{
+  background: url("/assets/images/pattern-sm.png") repeat center fixed;
+}
+}
