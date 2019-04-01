@@ -141,4 +141,10 @@ button.submit:hover,button.submit:active{
 body{
   background: url("/assets/images/pattern-sm.png") repeat center fixed;
 }
+li{
+  font-size: 16px;
+}
+li.button{
+font-size: 11px;
+}
 }
