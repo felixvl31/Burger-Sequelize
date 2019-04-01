@@ -3,13 +3,18 @@ var db = require("../models");
 module.exports = function(app) {
   
   // Create all our routes and set up logic within those routes where required.
-  app.get("/", function(req, res) {
-    db.Burger.findAll({ 
+  app.get("/", function (req, res) {
+    db.Burger.findAll({
       include: [
-        { model: db.Customer}
+        { model: db.Customer }
       ],
     }).then(function (dbBurger) {
-      res.render("index", {burgers:dbBurger});
+      db.Customer.findOne({
+        order: [['createdAt', 'DESC']]
+      }).then(function (dbCustomer) {
+        res.render("index", { burgers: dbBurger, customers: dbCustomer });
+      });
+
     });
   });
 
