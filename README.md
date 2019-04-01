@@ -14,4 +14,4 @@ Add a burger to the DB, Devour it! and clean your table whenever you want...
 
 ***
 ## **Give it a try**
-* ### [Try it here!](https://fevl-burger.herokuapp.com/)
+* ### [Try it here!](https://fevl-burger-sequelize.herokuapp.com/)
