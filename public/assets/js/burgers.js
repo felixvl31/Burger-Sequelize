@@ -24,21 +24,64 @@ $(function() {
   $(".create-form").on("submit", function(event) {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
+    $(".customerTitle").removeClass("blink_me");
     if ($("#burg").val().trim() === "") return;
 
-    var newBurger = {
-      name: $("#burg").val().trim(),
+    $.ajax("/api/customers", {
+      type: "GET",
+    }).then(
+      function (customers) {
+        if (customers.length > 0) {
+          $.ajax("/api/lastCustomer", {
+            type: "GET"
+          }).then(function (customer) {
+            console.log(customer);
+            var newBurger = {
+              name: $("#burg").val().trim(),
+              CustomerId: customer.id
+            };
+            // Send the POST request.
+            $.ajax("/api/burgers", {
+              type: "POST",
+              data: newBurger
+            })
+              .then(
+                function () {
+                  console.log("Created new burger");
+                  // Reload the page to get the updated list
+                  location.reload();
+                }
+              );
+          })
+
+        }
+        else {
+          $("#customer").attr("placeholder", "You need a customer...");
+          $(".customerTitle").addClass("blink_me");
+        }
+      }
+    );
+
+  });
+
+  $(".create-customer").on("submit", function(event) {
+    // Make sure to preventDefault on a submit event.
+    event.preventDefault();
+     $(".customerTitle").removeClass("blink_me");
+    if ($("#customer").val().trim() === "") return;
+
+    var newCustomer = {
+      name: $("#customer").val().trim(),
     };
 
     // Send the POST request.
-    $.ajax("/api/burgers", {
+    $.ajax("/api/customers", {
       type: "POST",
-      data: newBurger
-    }).then(
+      data: newCustomer
+    })
+    .then(
       function() {
-        console.log("Created new burger");
-        // Reload the page to get the updated list
-        location.reload();
+        console.log("Created new customer");
       }
     );
   });

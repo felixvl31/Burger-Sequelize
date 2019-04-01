@@ -93,7 +93,7 @@ label{
   color:#DCE0D9;
 }
 
-input#burg{
+input#burg,input#customer{
   border-radius:5px;
 }
 button.submit{
@@ -112,6 +112,21 @@ button.submit:hover,button.submit:active{
   border-radius: 25px;
   margin:10px 0 10px 0;
   background-color: rgba(1, 1, 2, 0.95);
+}
+
+::placeholder{
+  color:black;
+  font-weight: 900;
+}
+
+.blink_me {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }
 
 
