@@ -11,7 +11,7 @@ Add a burger to the DB, Devour it! and clean your table whenever you want...
    * [Express Handlebars](https://www.npmjs.com/package/express-handlebars)
    * [Sequelize](https://www.npmjs.com/package/sequelize)
    * [jQuery](https://jquery.com/)
-   * [Boostrap](https://getbootstrap.com/)
+   * [Bootstrap](https://getbootstrap.com/)
 
 ***
 ## **Give it a try**
